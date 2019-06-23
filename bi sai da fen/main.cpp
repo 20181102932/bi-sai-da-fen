@@ -1,89 +1,137 @@
 #include<iostream>
 #include<fstream>
 using namespace std;
-struct st{
-    char bianhao[10];
-    char xueyuan[10];
+struct student{
+    char number[10];
+    char academy[10];
     char name [10];
+    int score[7];
+    int average;
+    int rank;
 };
-struct cp{
+struct referee{
     char name[10];
-    double yihao;
-    double erhao;
-    double sanhao;
+    double first;
+    double second;
+    double third;
+    double forth;
+    double fifth;
+    double sixth;
+    double seventh;
+    double eighth;
+    double ninth;
+    double tenth;
 };
 int main()
 {
-    ifstream in("/Users/s20181102932/Desktop/xuanshou.txt");
-    st b,c,d;
-    in>>b.bianhao>>b.xueyuan>>b.name>>c.bianhao>>c.xueyuan>>c.name>>d.bianhao>>d.xueyuan>>d.name;
-    ifstream inn("/Users/s20181102932/Desktop/caipan.txt");
-    cp e,f,g,h,i,j,k;
- inn>>e.name>>e.yihao>>e.erhao>>e.sanhao>>f.name>>f.yihao>>f.erhao>>f.sanhao>>g.name>>g.yihao>>g.erhao>>g.sanhao>>h.name>>h.yihao>>h.erhao>>h.sanhao>>i.name>>i.yihao>>i.erhao>>i.sanhao>>j.name>>j.yihao>>j.erhao>>j.sanhao>>k.name>>k.yihao>>k.erhao>>k.sanhao;
-    double x[7]={e.yihao,f.yihao,g.yihao,h.yihao,i.yihao,j.yihao,k.yihao};
-    double y[7]={e.erhao,f.erhao,g.erhao,h.erhao,i.erhao,j.erhao,k.erhao};
-    double z[7]={e.sanhao,f.sanhao,g.sanhao,h.sanhao,i.sanhao,j.sanhao,k.sanhao};
-    int l,m;
-    double n;
-    for(l=0;l<6;l++)
+    int number;
+    ifstream a{"/Users/s20181102932/Desktop/参赛选手人数.txt"};
+    a>>number;
+    student student[number];
+    ifstream b("/Users/s20181102932/Desktop/选手信息.txt");
+    int c=0;
+    for(c=0;c<number;c++)
     {
-        for(m=0;m<6;m++)
+        b>>student[c].number>>student[c].academy>>student[c].name;
+    }
+    referee referee[7];
+    ifstream d("/Users/s20181102932/Desktop/裁判打分表.txt");
+    for(c=0;c<7;c++)
+{
+    d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth>>referee[c].tenth;
+    }
+    int e=0;
+    int f=0;
+    int g=0;
+    int score1[6]={0};
+    int score2[6]={0};
+    int score3[6]={0};
+    int score4[6]={0};
+    int score5[6]={0};
+    int score6[6]={0};
+    int score7[6]={0};
+    int score8[6]={0};
+    int score9[6]={0};
+    int score10[6]={0};
+    int ave=0;
+    int sum=0;
+    for(e=0;e<number;e++)
+    {
+        for(f=0;f<7;f++)
         {
-            if(x[m]<x[m+1])
+           if(e==0)
+           {
+               for(g=0;g<7;g++)
+               {
+                   score1[g]=referee[g].first;
+               }
+           }
+            if(e==1)
             {
-                n=x[m];
-                x[m]=x[m+1];
-                x[m+1]=n;
+                for(g=0;g<7;g++)
+                {
+                    score2[g]=referee[g].second;
+                }
+            }
+            if(e==2)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score3[g]=referee[g].third;
+                }
+            }
+            if(e==3)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score4[g]=referee[g].forth;
+                }
+            }
+            if(e==4)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score5[g]=referee[g].fifth;
+                }
+            }
+            if(e==5)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score6[g]=referee[g].sixth;
+                }
+            }
+            if(e==6)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score7[g]=referee[g].seventh;
+                }
+            }
+            if(e==7)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score8[g]=referee[g].eighth;
+                }
+            }
+            if(e==8)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score9[g]=referee[g].ninth;
+                }
+            }
+            if(e==9)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score10[g]=referee[g].tenth;
+                }
             }
         }
     }
-    for(l=0;l<6;l++)
-    {
-        for(m=0;m<6;m++)
-        {
-            if(y[m]<y[m+1])
-            {
-                n=x[m];
-                y[m]=y[m+1];
-                y[m+1]=n;
-            }
-        }
-    }
-    for(l=0;l<6;l++)
-    {
-        for(m=0;m<6;m++)
-        {
-            if(z[m]<z[m+1])
-            {
-                n=z[m];
-                z[m]=z[m+1];
-                z[m+1]=n;
-            }
-        }
-    }
-    x[0]=0;
-    x[6]=0;
-    y[0]=0;
-    y[6]=0;
-    z[0]=0;
-    z[6]=0;
-    double ave,bve,cve;
-    ave=(x[1]+x[2]+x[3]+x[4]+x[5])/5;
-    bve=(y[1]+y[2]+y[3]+y[4]+y[5])/5;
-    cve=(z[1]+z[2]+z[3]+z[4]+z[5])/5;
-    ofstream of("/Users/s20181102932/Desktop/jieguo.txt");
-    if(ave>bve&&ave>cve)
-    {
-        of<<b.name<<" "<<e.yihao<<" "<<f.yihao<<" " <<g.yihao<<" "<<h.yihao<<" "<<i.yihao<<" "<<j.yihao<<" "<<k.yihao<<" "<<ave<<" "<<"1"<<endl;
-        if(bve>cve)
-        {
-            of<<c.name<<" "<<e.erhao<<" "<<f.erhao<<" "<<g.erhao<<" "<<h.erhao<<" "<<i.erhao<<" "<<j.erhao<<" "<<k.erhao<<" "<<bve<<" "<<"2"<<endl<<d.name<<" "<<e.sanhao<<" "<<f.sanhao<<" "<<g.sanhao<<" "<<h.sanhao<<" "<<i.sanhao<<" "<<j.sanhao<<" "<<k.sanhao<<" "<<cve<<" "<<"3"<<endl;
-        }
-        if(bve<cve)
-        {
-            of<<d.name<<" "<<e.sanhao<<" "<<f.sanhao<<" "<<g.sanhao<<" "<<h.sanhao<<" "<<i.sanhao<<" "<<j.sanhao<<" "<<k.sanhao<<" "<<cve<<" "<<"2"<<endl<<c.name<<" "<<e.erhao<<" "<<f.erhao<<" "
-            <<g.erhao<<" "<<h.erhao<<" "<<i.erhao<<" "<<j.erhao<<" "<<k.erhao<<" "<<bve<<" "<<"3"<<endl;
-        }
-    }
+    
+
     return 0;
 }
