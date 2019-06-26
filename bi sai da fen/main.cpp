@@ -129,9 +129,9 @@ int main()
             }
         }
     }
-    for(e=0;e<7;e++)
+    for(e=0;e<6;e++)
     {
-        for(f=0;f<7;f++)
+        for(f=0;f<6;f++)
         {
             if(score1[f]>score1[f+1])
             {
@@ -141,6 +141,7 @@ int main()
             }
         }
     }
+    
     for(e=0;e<8;e++)
     {
         for(f=0;f<8;f++)
@@ -249,7 +250,7 @@ int main()
             }
         }
     }
-    
+    cout<<score1[0]<<endl<<score1[1]<<endl<<score1[2]<<endl<<score1[3]<<endl<<score1[4]<<endl<<score1[5]<<endl<<score1[6]<<endl;
     score1[0]=0;score1[6]=0;
     score2[0]=0;score2[6]=0;
     score3[0]=0;score3[6]=0;
@@ -297,7 +298,7 @@ int main()
         {
             if(ave[e]==student[f].average)
             {
-                z<<"第"<<e+1<<"名"<<student[f].name<<"获得"<<ave[e]<<"的平均分"<<endl;
+                z<<"第"<<e+1<<"名"<<student[f].name<<"获得"<<ave[e]<<"的平均分"<<endl<<endl;
                 if(f==0)
                 {
                     for(g=0;g<7;g++)
@@ -366,7 +367,7 @@ int main()
                 {
                     for(g=0;g<7;g++)
                     {
-                        z<<referee[g].name<<"评委为这位选手打"<<referee[g].ninth<<"分"<<endl<<endl;
+                        z<<referee[g].name<<" "<<referee[g].ninth<<" "<<endl<<endl;
                     }
                     z<<endl;
                 }
@@ -380,10 +381,6 @@ int main()
                 }
             }
         }
-    }
-    for(e=0;e<7;e++)
-    {
-        cout<<score1[e]<<endl;
     }
     return 0;
 }
