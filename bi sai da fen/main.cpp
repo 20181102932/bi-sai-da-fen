@@ -8,7 +8,6 @@ struct student{
     char name [10];
     int score[7];
     double average;
-    int rank;
 };
 struct referee{
     char name[10];
@@ -38,8 +37,18 @@ int main()
     referee referee[7];
     ifstream d("/Users/s20181102932/Desktop/裁判打分表.txt");
     for(c=0;c<7;c++)
-{
-    d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth>>referee[c].tenth;
+    {
+ if(number==10)
+            d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth>>referee[c].tenth;
+ if(number==9) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth;
+        if(number==8) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth;
+        if(number==7) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh;
+        if(number==6) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth;
+        if(number==5) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth;
+        if(number==4) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth;
+        if(number==3) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third;
+        if(number==2) d>>referee[c].name>>referee[c].first>>referee[c].second;
+        if(number==1) d>>referee[c].name>>referee[c].first;
     }
     int e=0;
     int f=0;
@@ -58,13 +67,13 @@ int main()
     {
         for(f=0;f<7;f++)
         {
-           if(e==0)
-           {
-               for(g=0;g<7;g++)
-               {
-                   score1[g]=referee[g].first;
-               }
-           }
+            if(e==0)
+            {
+                for(g=0;g<7;g++)
+                {
+                    score1[g]=referee[g].first;
+                }
+            }
             if(e==1)
             {
                 for(g=0;g<7;g++)
@@ -130,7 +139,7 @@ int main()
             }
         }
     }
-
+    
     sort(score1,score1+7);
     sort(score2,score2+7);
     sort(score3,score3+7);
@@ -142,7 +151,7 @@ int main()
     sort(score9,score9+7);
     sort(score10,score10+7);
     
-
+    
     
     
     score1[0]=0;score1[6]=0;
@@ -192,7 +201,7 @@ int main()
         {
             if(ave[e]==student[f].average)
             {
-                z<<"第"<<e+1<<"名"<<student[f].name<<"获得"<<ave[e]<<"的平均分"<<endl<<endl;
+                z<<"第"<<e+1<<"名"<<"来自"<<student[f].academy<<"的"<<student[f].name<<"获得"<<ave[e]<<"的平均分"<<endl<<endl;
                 if(f==0)
                 {
                     for(g=0;g<7;g++)
@@ -270,9 +279,11 @@ int main()
                     for(g=0;g<7;g++)
                     {
                         z<<referee[g].name<<" "<<referee[g].tenth<<" ";
+                        
                     }
                     z<<endl;
                 }
+                z<<endl;
             }
         }
     }
