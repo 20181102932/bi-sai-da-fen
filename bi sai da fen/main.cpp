@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
-#include <algorithm>
+#include<algorithm>
+#define S_NUMBER 10
 using namespace std;
 struct student{
     char number[10];
@@ -24,35 +25,31 @@ struct referee{
 };
 int main()
 {
-    int number;
-    ifstream a{"/Users/s20181102932/Desktop/参赛选手人数.txt"};
-    a>>number;
-    student student[number];
-    ifstream b("/Users/s20181102932/Desktop/选手信息.txt");
+    student student[S_NUMBER];
+    ifstream information("/Users/s20181102932/Desktop/选手信息.txt");
     int c=0;
-    for(c=0;c<number;c++)
+    for(c=0;c<S_NUMBER;c++)
     {
-        b>>student[c].number>>student[c].academy>>student[c].name;
+        information>>student[c].number>>student[c].academy>>student[c].name;
     }
     referee referee[7];
-    ifstream d("/Users/s20181102932/Desktop/裁判打分表.txt");
+    ifstream table("/Users/s20181102932/Desktop/裁判打分表.txt");
     for(c=0;c<7;c++)
     {
- if(number==10)
-            d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth>>referee[c].tenth;
- if(number==9) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth;
-        if(number==8) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth;
-        if(number==7) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh;
-        if(number==6) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth;
-        if(number==5) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth;
-        if(number==4) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth;
-        if(number==3) d>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third;
-        if(number==2) d>>referee[c].name>>referee[c].first>>referee[c].second;
-        if(number==1) d>>referee[c].name>>referee[c].first;
+if(S_NUMBER==10)table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth>>referee[c].tenth;
+if(S_NUMBER==9) table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth>>referee[c].ninth;
+if(S_NUMBER==8) table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh>>referee[c].eighth;
+if(S_NUMBER==7) table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth>>referee[c].seventh;
+if(S_NUMBER==6) table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth>>referee[c].sixth;
+if(S_NUMBER==5) table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth>>referee[c].fifth;
+if(S_NUMBER==4) table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third>>referee[c].forth;
+if(S_NUMBER==3) table>>referee[c].name>>referee[c].first>>referee[c].second>>referee[c].third;
+if(S_NUMBER==2) table>>referee[c].name>>referee[c].first>>referee[c].second;
+if(S_NUMBER==1) table>>referee[c].name>>referee[c].first;
     }
-    int e=0;
-    int f=0;
-    int g=0;
+    int i=0;
+    int j=0;
+    int k=0;
     int score1[7]={0};
     int score2[7]={0};
     int score3[7]={0};
@@ -63,83 +60,82 @@ int main()
     int score8[7]={0};
     int score9[7]={0};
     int score10[7]={0};
-    for(e=0;e<number;e++)
+    for(i=0;i<S_NUMBER;i++)
     {
-        for(f=0;f<7;f++)
+        for(j=0;j<7;j++)
         {
-            if(e==0)
+            if(i==0)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score1[g]=referee[g].first;
+                    score1[k]=referee[k].first;
                 }
             }
-            if(e==1)
+            if(i==1)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score2[g]=referee[g].second;
+                    score2[k]=referee[k].second;
                 }
             }
-            if(e==2)
+            if(i==2)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score3[g]=referee[g].third;
+                    score3[k]=referee[k].third;
                 }
             }
-            if(e==3)
+            if(i==3)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score4[g]=referee[g].forth;
+                    score4[k]=referee[k].forth;
                 }
             }
-            if(e==4)
+            if(i==4)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score5[g]=referee[g].fifth;
+                    score5[k]=referee[k].fifth;
                 }
             }
-            if(e==5)
+            if(i==5)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score6[g]=referee[g].sixth;
+                    score6[k]=referee[k].sixth;
                 }
             }
-            if(e==6)
+            if(i==6)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score7[g]=referee[g].seventh;
+                    score7[k]=referee[k].seventh;
                 }
             }
-            if(e==7)
+            if(i==7)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score8[g]=referee[g].eighth;
+                    score8[k]=referee[k].eighth;
                 }
             }
-            if(e==8)
+            if(i==8)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score9[g]=referee[g].ninth;
+                    score9[k]=referee[k].ninth;
                 }
             }
-            if(e==9)
+            if(i==9)
             {
-                for(g=0;g<7;g++)
+                for(k=0;k<7;k++)
                 {
-                    score10[g]=referee[g].tenth;
+                    score10[k]=referee[k].tenth;
                 }
             }
         }
     }
-    
     sort(score1,score1+7);
     sort(score2,score2+7);
     sort(score3,score3+7);
@@ -150,10 +146,6 @@ int main()
     sort(score8,score8+7);
     sort(score9,score9+7);
     sort(score10,score10+7);
-    
-    
-    
-    
     score1[0]=0;score1[6]=0;
     score2[0]=0;score2[6]=0;
     score3[0]=0;score3[6]=0;
@@ -176,114 +168,113 @@ int main()
     sum[7]=score8[1]+score8[2]+score8[3]+score8[4]+score8[5];
     sum[8]=score9[1]+score9[2]+score9[3]+score9[4]+score9[5];
     sum[9]=score10[1]+score10[2]+score10[3]+score10[4]+score10[5]+score10[6]+score10[0];
-    for(e=0;e<10;e++)
+    for(i=0;i<10;i++)
     {
-        ave[e]=sum[e]/5;
-        student[e].average=ave[e];
+        ave[i]=sum[i]/5;
+        student[i].average=ave[i];
     }
-    for(e=0;e<10;e++)
+    for(i=0;i<10;i++)
     {
-        for(f=0;f<10;f++)
+        for(j=0;j<10;j++)
         {
-            if (ave[f]<ave[f+1])
+            if (ave[j]<ave[j+1])
             {
-                double z=ave[f];
-                ave[f]=ave[f+1];
-                ave[f+1]=z;
+                double mid=ave[j];
+                ave[j]=ave[j+1];
+                ave[j+1]=mid;
             }
         }
     }
-    ofstream z("/Users/s20181102932/Desktop/比赛结果.txt");
-    g=0;
-    for(e=0;e<number;e++)
+    ofstream output("/Users/s20181102932/Desktop/比赛结果.txt");
+    k=0;
+    for(i=0;i<S_NUMBER;i++)
     {
-        for(f=0;f<number;f++)
+        for(j=0;j<S_NUMBER;j++)
         {
-            if(ave[e]==student[f].average)
+            if(ave[i]==student[j].average)
             {
-                z<<"第"<<e+1<<"名"<<"     "<<"来自"<<student[f].academy<<"的"<<student[f].name<<"平均分为"<<ave[e]<<endl<<endl;
-                if(f==0)
+                output<<"第"<<i+1<<"名"<<"     "<<"来自"<<student[j].academy<<"的"<<student[j].name<<"平均分为"<<ave[i]<<endl<<endl;
+                if(j==0)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].first<<" ";
+                        output<<referee[k].name<<" "<<referee[k].first<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==1)
+                if(j==1)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].second<<" ";
+                        output<<referee[k].name<<" "<<referee[k].second<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==2)
+                if(j==2)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].third<<" ";
+                        output<<referee[k].name<<" "<<referee[k].third<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==3)
+                if(j==3)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].forth<<" ";
+                        output<<referee[k].name<<" "<<referee[k].forth<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==4)
+                if(j==4)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].fifth<<" ";
+                        output<<referee[k].name<<" "<<referee[k].fifth<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==5)
+                if(j==5)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].sixth<<" ";
+                        output<<referee[k].name<<" "<<referee[k].sixth<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==6)
+                if(j==6)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].seventh<<" ";
+                        output<<referee[k].name<<" "<<referee[k].seventh<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==7)
+                if(j==7)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].eighth<<" ";
+                        output<<referee[k].name<<" "<<referee[k].eighth<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==8)
+                if(j==8)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].ninth<<" ";
+                        output<<referee[k].name<<" "<<referee[k].ninth<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                if(f==9)
+                if(j==9)
                 {
-                    for(g=0;g<7;g++)
+                    for(k=0;k<7;k++)
                     {
-                        z<<referee[g].name<<" "<<referee[g].tenth<<" ";
-                        
+                        output<<referee[k].name<<" "<<referee[k].tenth<<" ";
                     }
-                    z<<endl;
+                    output<<endl;
                 }
-                z<<endl;
+                output<<endl;
             }
         }
     }
