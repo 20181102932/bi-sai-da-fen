@@ -1,0 +1,1104 @@
+{\rtf1\ansi\ansicpg936\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset134 PingFangSC-Regular;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red255\green255\blue255;\red196\green26\blue22;
+\red155\green35\blue147;\red0\green0\blue0;\red92\green38\blue153;\red28\green0\blue207;\red50\green109\blue116;
+\red57\green0\blue160;}
+{\*\expandedcolortbl;;\csgenericrgb\c39147\c22031\c12446;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c77000\c10200\c8600;
+\csgenericrgb\c60759\c13753\c57628;\csgenericrgb\c0\c0\c0;\csgenericrgb\c35922\c14825\c60191;\csgenericrgb\c11000\c0\c81000;\csgenericrgb\c19418\c42935\c45455;
+\csgenericrgb\c22454\c0\c62803;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 #include\cf4 <iostream>
+\f1 \cf0 \
+
+\f0 \cf2 #include\cf4 <fstream>
+\f1 \cf0 \
+
+\f0 \cf2 #include \cf4 <algorithm>
+\f1 \cf0 \
+
+\f2\b \cf5 using
+\f0\b0 \cf6  
+\f2\b \cf5 namespace
+\f0\b0 \cf6  \cf7 std\cf6 ;
+\f1 \cf0 \
+
+\f2\b \cf5 struct
+\f0\b0 \cf6  student\{
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 char
+\f0\b0 \cf6  number[\cf8 10\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 char
+\f0\b0 \cf6  academy[\cf8 10\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 char
+\f0\b0 \cf6  name [\cf8 10\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score[\cf8 7\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  average;
+\f1 \cf0 \
+
+\f0 \cf6 \};
+\f1 \cf0 \
+
+\f2\b \cf5 struct
+\f0\b0 \cf6  referee\{
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 char
+\f0\b0 \cf6  name[\cf8 10\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  first;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  second;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  third;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  forth;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  fifth;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  sixth;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  seventh;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  eighth;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  ninth;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  tenth;
+\f1 \cf0 \
+
+\f0 \cf6 \};
+\f1 \cf0 \
+
+\f2\b \cf5 int
+\f0\b0 \cf6  main()
+\f1 \cf0 \
+
+\f0 \cf6 \{
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  number;
+\f1 \cf0 \
+
+\f0 \cf6     \cf7 ifstream\cf6  a\{\cf4 "/Users/s20181102932/Desktop/
+\f3 \'b2\'ce\'c8\'fc\'d1\'a1\'ca\'d6\'c8\'cb\'ca\'fd
+\f0 .txt"\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     a>>number;
+\f1 \cf0 \
+
+\f0 \cf6     \cf9 student\cf6  student[number];
+\f1 \cf0 \
+
+\f0 \cf6     \cf7 ifstream\cf6  b(\cf4 "/Users/s20181102932/Desktop/
+\f3 \'d1\'a1\'ca\'d6\'d0\'c5\'cf\'a2
+\f0 .txt"\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  c=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 for
+\f0\b0 \cf6 (c=\cf8 0\cf6 ;c<number;c++)
+\f1 \cf0 \
+
+\f0 \cf6     \{
+\f1 \cf0 \
+
+\f0 \cf6         b>>student[c].\cf9 number\cf6 >>student[c].\cf9 academy\cf6 >>student[c].\cf9 name\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     \}
+\f1 \cf0 \
+
+\f0 \cf6     \cf9 referee\cf6  referee[\cf8 7\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     \cf7 ifstream\cf6  d(\cf4 "/Users/s20181102932/Desktop/
+\f3 \'b2\'c3\'c5\'d0\'b4\'f2\'b7\'d6\'b1\'ed
+\f0 .txt"\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 for
+\f0\b0 \cf6 (c=\cf8 0\cf6 ;c<\cf8 7\cf6 ;c++)
+\f1 \cf0 \
+
+\f0 \cf6     \{
+\f1 \cf0 \
+
+\f0 \cf6  
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 10\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 >>referee[c].\cf9 forth\cf6 >>referee[c].\cf9 fifth\cf6 >>referee[c].\cf9 sixth\cf6 >>referee[c].\cf9 seventh\cf6 >>referee[c].\cf9 eighth\cf6 >>referee[c].\cf9 ninth\cf6 >>referee[c].\cf9 tenth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6  
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 9\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 >>referee[c].\cf9 forth\cf6 >>referee[c].\cf9 fifth\cf6 >>referee[c].\cf9 sixth\cf6 >>referee[c].\cf9 seventh\cf6 >>referee[c].\cf9 eighth\cf6 >>referee[c].\cf9 ninth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 8\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 >>referee[c].\cf9 forth\cf6 >>referee[c].\cf9 fifth\cf6 >>referee[c].\cf9 sixth\cf6 >>referee[c].\cf9 seventh\cf6 >>referee[c].\cf9 eighth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 7\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 >>referee[c].\cf9 forth\cf6 >>referee[c].\cf9 fifth\cf6 >>referee[c].\cf9 sixth\cf6 >>referee[c].\cf9 seventh\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 6\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 >>referee[c].\cf9 forth\cf6 >>referee[c].\cf9 fifth\cf6 >>referee[c].\cf9 sixth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 5\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 >>referee[c].\cf9 forth\cf6 >>referee[c].\cf9 fifth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 4\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 >>referee[c].\cf9 forth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 3\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 >>referee[c].\cf9 third\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 2\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 >>referee[c].\cf9 second\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 if
+\f0\b0 \cf6 (number==\cf8 1\cf6 ) d>>referee[c].\cf9 name\cf6 >>referee[c].\cf9 first\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     \}
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  e=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  f=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  g=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score1[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score2[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score3[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score4[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score5[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score6[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score7[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score8[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score9[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 int
+\f0\b0 \cf6  score10[\cf8 7\cf6 ]=\{\cf8 0\cf6 \};
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 for
+\f0\b0 \cf6 (e=\cf8 0\cf6 ;e<number;e++)
+\f1 \cf0 \
+
+\f0 \cf6     \{
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 for
+\f0\b0 \cf6 (f=\cf8 0\cf6 ;f<\cf8 7\cf6 ;f++)
+\f1 \cf0 \
+
+\f0 \cf6         \{
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 0\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score1[g]=referee[g].\cf9 first\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 1\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score2[g]=referee[g].\cf9 second\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 2\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score3[g]=referee[g].\cf9 third\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 3\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score4[g]=referee[g].\cf9 forth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 4\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score5[g]=referee[g].\cf9 fifth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 5\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score6[g]=referee[g].\cf9 sixth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 6\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score7[g]=referee[g].\cf9 seventh\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 7\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score8[g]=referee[g].\cf9 eighth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 8\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score9[g]=referee[g].\cf9 ninth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (e==\cf8 9\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     score10[g]=referee[g].\cf9 tenth\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6         \}
+\f1 \cf0 \
+
+\f0 \cf6     \}
+\f1 \cf0 \
+
+\f0 \cf6     
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score1,score1+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score2,score2+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score3,score3+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score4,score4+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score5,score5+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score6,score6+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score7,score7+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score8,score8+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score9,score9+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     \cf10 sort\cf6 (score10,score10+\cf8 7\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     
+\f1 \cf0 \
+
+\f0 \cf6     
+\f1 \cf0 \
+
+\f0 \cf6     
+\f1 \cf0 \
+
+\f0 \cf6     
+\f1 \cf0 \
+
+\f0 \cf6     score1[\cf8 0\cf6 ]=\cf8 0\cf6 ;score1[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score2[\cf8 0\cf6 ]=\cf8 0\cf6 ;score2[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score3[\cf8 0\cf6 ]=\cf8 0\cf6 ;score3[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score4[\cf8 0\cf6 ]=\cf8 0\cf6 ;score4[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score5[\cf8 0\cf6 ]=\cf8 0\cf6 ;score5[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score6[\cf8 0\cf6 ]=\cf8 0\cf6 ;score6[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score7[\cf8 0\cf6 ]=\cf8 0\cf6 ;score7[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score8[\cf8 0\cf6 ]=\cf8 0\cf6 ;score8[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score9[\cf8 0\cf6 ]=\cf8 0\cf6 ;score9[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     score10[\cf8 0\cf6 ]=\cf8 0\cf6 ;score10[\cf8 6\cf6 ]=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  ave[\cf8 10\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 double
+\f0\b0 \cf6  sum[\cf8 10\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 0\cf6 ]=score1[\cf8 1\cf6 ]+score1[\cf8 2\cf6 ]+score1[\cf8 3\cf6 ]+score1[\cf8 4\cf6 ]+score1[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 1\cf6 ]=score2[\cf8 1\cf6 ]+score2[\cf8 2\cf6 ]+score2[\cf8 3\cf6 ]+score2[\cf8 4\cf6 ]+score2[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 2\cf6 ]=score3[\cf8 1\cf6 ]+score3[\cf8 2\cf6 ]+score3[\cf8 3\cf6 ]+score3[\cf8 4\cf6 ]+score3[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 3\cf6 ]=score4[\cf8 1\cf6 ]+score4[\cf8 2\cf6 ]+score4[\cf8 3\cf6 ]+score4[\cf8 4\cf6 ]+score4[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 4\cf6 ]=score5[\cf8 1\cf6 ]+score5[\cf8 2\cf6 ]+score5[\cf8 3\cf6 ]+score5[\cf8 4\cf6 ]+score5[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 5\cf6 ]=score6[\cf8 1\cf6 ]+score6[\cf8 2\cf6 ]+score6[\cf8 3\cf6 ]+score6[\cf8 4\cf6 ]+score6[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 6\cf6 ]=score7[\cf8 1\cf6 ]+score7[\cf8 2\cf6 ]+score7[\cf8 3\cf6 ]+score7[\cf8 4\cf6 ]+score7[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 7\cf6 ]=score8[\cf8 1\cf6 ]+score8[\cf8 2\cf6 ]+score8[\cf8 3\cf6 ]+score8[\cf8 4\cf6 ]+score8[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 8\cf6 ]=score9[\cf8 1\cf6 ]+score9[\cf8 2\cf6 ]+score9[\cf8 3\cf6 ]+score9[\cf8 4\cf6 ]+score9[\cf8 5\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     sum[\cf8 9\cf6 ]=score10[\cf8 1\cf6 ]+score10[\cf8 2\cf6 ]+score10[\cf8 3\cf6 ]+score10[\cf8 4\cf6 ]+score10[\cf8 5\cf6 ]+score10[\cf8 6\cf6 ]+score10[\cf8 0\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 for
+\f0\b0 \cf6 (e=\cf8 0\cf6 ;e<\cf8 10\cf6 ;e++)
+\f1 \cf0 \
+
+\f0 \cf6     \{
+\f1 \cf0 \
+
+\f0 \cf6         ave[e]=sum[e]/\cf8 5\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6         student[e].\cf9 average\cf6 =ave[e];
+\f1 \cf0 \
+
+\f0 \cf6     \}
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 for
+\f0\b0 \cf6 (e=\cf8 0\cf6 ;e<\cf8 10\cf6 ;e++)
+\f1 \cf0 \
+
+\f0 \cf6     \{
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 for
+\f0\b0 \cf6 (f=\cf8 0\cf6 ;f<\cf8 10\cf6 ;f++)
+\f1 \cf0 \
+
+\f0 \cf6         \{
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6  (ave[f]<ave[f+\cf8 1\cf6 ])
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 double
+\f0\b0 \cf6  z=ave[f];
+\f1 \cf0 \
+
+\f0 \cf6                 ave[f]=ave[f+\cf8 1\cf6 ];
+\f1 \cf0 \
+
+\f0 \cf6                 ave[f+\cf8 1\cf6 ]=z;
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6         \}
+\f1 \cf0 \
+
+\f0 \cf6     \}
+\f1 \cf0 \
+
+\f0 \cf6     \cf7 ofstream\cf6  z(\cf4 "/Users/s20181102932/Desktop/
+\f3 \'b1\'c8\'c8\'fc\'bd\'e1\'b9\'fb
+\f0 .txt"\cf6 );
+\f1 \cf0 \
+
+\f0 \cf6     g=\cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 for
+\f0\b0 \cf6 (e=\cf8 0\cf6 ;e<number;e++)
+\f1 \cf0 \
+
+\f0 \cf6     \{
+\f1 \cf0 \
+
+\f0 \cf6         
+\f2\b \cf5 for
+\f0\b0 \cf6 (f=\cf8 0\cf6 ;f<number;f++)
+\f1 \cf0 \
+
+\f0 \cf6         \{
+\f1 \cf0 \
+
+\f0 \cf6             
+\f2\b \cf5 if
+\f0\b0 \cf6 (ave[e]==student[f].\cf9 average\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6             \{
+\f1 \cf0 \
+
+\f0 \cf6                 z<<\cf4 "
+\f3 \'b5\'da
+\f0 "\cf6 <<e+\cf8 1\cf6 <<\cf4 "
+\f3 \'c3\'fb
+\f0 "\cf6 <<\cf4 "
+\f3 \'c0\'b4\'d7\'d4
+\f0 "\cf6 <<student[f].academy<<\cf4 "
+\f3 \'b5\'c4
+\f0 "\cf6 <<student[f].name<<\cf4 "
+\f3 \'bb\'f1\'b5\'c3
+\f0 "\cf6 <<ave[e]<<\cf4 "
+\f3 \'b5\'c4\'c6\'bd\'be\'f9\'b7\'d6
+\f0 "\cf6 <<endl<<endl;
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 0\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 first\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 1\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 second\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 2\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 third\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 3\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 forth\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 4\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 fifth\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 5\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 sixth\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 6\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 seventh\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 7\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 eighth\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 8\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 ninth\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 
+\f2\b \cf5 if
+\f0\b0 \cf6 (f==\cf8 9\cf6 )
+\f1 \cf0 \
+
+\f0 \cf6                 \{
+\f1 \cf0 \
+
+\f0 \cf6                     
+\f2\b \cf5 for
+\f0\b0 \cf6 (g=\cf8 0\cf6 ;g<\cf8 7\cf6 ;g++)
+\f1 \cf0 \
+
+\f0 \cf6                     \{
+\f1 \cf0 \
+
+\f0 \cf6                         z<<referee[g].\cf9 name\cf6 <<\cf4 " "\cf6 <<referee[g].\cf9 tenth\cf6 <<\cf4 " "\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                         
+\f1 \cf0 \
+
+\f0 \cf6                     \}
+\f1 \cf0 \
+
+\f0 \cf6                     z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6                 \}
+\f1 \cf0 \
+
+\f0 \cf6                 z<<\cf10 endl\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6             \}
+\f1 \cf0 \
+
+\f0 \cf6         \}
+\f1 \cf0 \
+
+\f0 \cf6     \}
+\f1 \cf0 \
+
+\f0 \cf6     
+\f2\b \cf5 return
+\f0\b0 \cf6  \cf8 0\cf6 ;
+\f1 \cf0 \
+
+\f0 \cf6 \}
+\f1 \cf0 \
+}

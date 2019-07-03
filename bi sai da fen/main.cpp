@@ -201,7 +201,7 @@ int main()
         {
             if(ave[e]==student[f].average)
             {
-                z<<"第"<<e+1<<"名"<<"来自"<<student[f].academy<<"的"<<student[f].name<<"获得"<<ave[e]<<"的平均分"<<endl<<endl;
+                z<<"第"<<e+1<<"名"<<"     "<<"来自"<<student[f].academy<<"的"<<student[f].name<<"平均分为"<<ave[e]<<endl<<endl;
                 if(f==0)
                 {
                     for(g=0;g<7;g++)
