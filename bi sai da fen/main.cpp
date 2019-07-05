@@ -82,8 +82,6 @@ int main( )
             if(store_b[i]==student[j].final_score)
             {
                 output<<i+1<<"   "<<student[j].number<<" "<<student[j].name<<" "<<student[j].sex<<"  "<<student[j].acdemy<<" "<<student[j].score_1<<" "<<student[j].score_2<<" "<<student[j].score_3<<" "<<student[j].score_4<<" "<<student[j].score_5<<" "<<student[j].score_6<<" "<<student[j].score_7<<" "<<student[j].final_score<<endl;
-             
-              
             }
         }
     }
