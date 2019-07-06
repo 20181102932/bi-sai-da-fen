@@ -2,7 +2,7 @@
 #include<fstream>
 #include<algorithm>
 #include<iomanip>
-bool cmp(int a,int b){
+bool com(int a,int b){
     return a>b;
 }
 #define S_NUMBER 11
@@ -66,14 +66,14 @@ int main( )
         student[i].final_score=(store_a[1]+store_a[2]+store_a[3]+store_a[4]+store_a[5])/5;
         store_b[i]=student[i].final_score;
     }
-    sort(store_b,store_b+S_NUMBER,cmp);
+    sort(store_b,store_b+S_NUMBER,com);
     ofstream output("/Users/s20181102932/Desktop/比赛结果.txt");
-    output<<"名次"<<" "<<"编号"<<" "<<"性别"<<"  "<<"姓名"<<" "<<"学院"<<" ";
+    output<<"名次"<<" "<<"编号"<<"   "<<"姓名"<<"  "<<"性别"<<" "<<"学院"<<"    ";
     for(i=0;i<F_NUMBER;i++)
     {
         output<<referee[i].name<<" ";
     }
-    output<<"总分       "<<endl;
+    output<<"最后分数       "<<endl;
     cout<<setiosflags(ios::fixed)<<setprecision(2);
     for(i=0;i<S_NUMBER;i++)
     {
@@ -81,7 +81,12 @@ int main( )
         {
             if(store_b[i]==student[j].final_score)
             {
-                output<<i+1<<"   "<<student[j].number<<" "<<student[j].name<<" "<<student[j].sex<<"  "<<student[j].acdemy<<" "<<student[j].score_1<<" "<<student[j].score_2<<" "<<student[j].score_3<<" "<<student[j].score_4<<" "<<student[j].score_5<<" "<<student[j].score_6<<" "<<student[j].score_7<<" "<<student[j].final_score<<endl;
+                output<<i+1;
+                if(i<10&&i!=9)
+                    output<<"   ";
+                if(i>=10||i==9)
+                    output<<"  ";
+                output<<setiosflags(ios::left)<<setw(5)<<student[j].number<<" "<<student[j].name<<" "<<student[j].sex<<"  "<<student[j].acdemy<<" "<<student[j].score_1<<"    "<<student[j].score_2<<"    "<<student[j].score_3<<"    "<<student[j].score_4<<"    "<<student[j].score_5<<"    "<<student[j].score_6<<"    "<<student[j].score_7<<"    "<<student[j].final_score<<endl;
             }
         }
     }
