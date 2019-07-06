@@ -5,7 +5,7 @@
 bool cmp(int a,int b){
     return a>b;
 }
-#define S_NUMBER 8
+#define S_NUMBER 11
 #define F_NUMBER 7
 using namespace std;
 struct student{
@@ -26,7 +26,7 @@ struct referee{
     char name[10];
     char sex[10];
     char number[10];
-    char mobile_number[11];
+    char mobile_phone[11];
     char address[20];
 };
 int main( )
@@ -42,7 +42,7 @@ int main( )
     ifstream referee_information("/Users/s20181102932/Desktop/裁判信息表.txt");
     for(i=0;i<F_NUMBER;i++)
     {
-        referee_information>>referee[i].number>>referee[i].name>>referee[i].sex>>referee[i].mobile_number>>referee[i].address;
+        referee_information>>referee[i].number>>referee[i].name>>referee[i].sex>>referee[i].mobile_phone>>referee[i].address;
     }
     ifstream score_information("/Users/s20181102932/Desktop/裁判打分表.txt");
     for(i=0;i<S_NUMBER;i++)
